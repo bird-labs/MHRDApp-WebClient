@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+  <html ng-app="mhrdl">
+    <head>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="./css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="./css/site.css"/>
+      <link type="text/css" rel="stylesheet" href="./css/icons.css"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+    	<header>
+		<nav class="light-blue darken-3" ng-controller="mainController as act">
+		  <a href="/#/" class="brand-logo" ng-click="act.setTab(1)">&nbsp;MHRD Link</a>
+		  <ul class="right hide-on-med-and-down">
+		    <li ng-class="{ active:act.isSet(1) }"><a href="/#/" ng-click="act.setTab(1)">Home</a></li>
+		    <li ng-class="{ active:act.isSet(2) }"><a href="/#/posts" ng-click="act.setTab(2)">Posts</a></li>
+		    <li ng-class="{ active:act.isSet(3) }"><a href="https://www.wikiwand.com/en/Indian_Institutes_of_Technology" ng-click="act.setTab(3)">IITs</a></li>
+		    <li ng-class="{ active:act.isSet(4) }"><a href="http://mhrd.gov.in/" ng-click="act.setTab(4)">MHRD</a></li>
+		    <li ng-class="{ active:act.isSet(5) }"><a href="/#/profile" ng-click="act.setTab(5)"><strong>USER</strong></a></li>
+		  </ul>
+		  <ul id="slide-out" class="side-nav">
+            <li ng-class="{ active:act.isSet(1) }"><a href="/#/" ng-click="act.setTab(1)">Home</a></li>
+  		    <li ng-class="{ active:act.isSet(2) }"><a href="/#/posts" ng-click="act.setTab(2)">Posts</a></li>
+  		    <li ng-class="{ active:act.isSet(3) }"><a href="https://www.wikiwand.com/en/Indian_Institutes_of_Technology" ng-click="act.setTab(3)">IITs</a></li>
+  		    <li ng-class="{ active:act.isSet(4) }"><a href="http://mhrd.gov.in/" ng-click="act.setTab(4)">MHRD</a></li>
+  		    <li ng-class="{ active:act.isSet(5) }"><a href="/#/profile" ng-click="act.setTab(5)"><strong>USER</strong></a></li>
+		  </ul>
+  			<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+		</nav>
+		</header>
+
+
+		<main>
+			<div ng-view></div>
+		</main>
+
+
+		 <footer class="page-footer light-blue darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">MHRD Link</h5>
+                <p class="grey-text text-lighten-4">Let's make policy making more transparent.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">An initiative by</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://iitb.ac.in">IIT Bombay</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright light-blue darken-4">
+            <div class="container">
+            © IIT Bombay, 2015
+            </div>
+          </div>
+        </footer>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="./js/materialize.min.js"></script>
+      <script type="text/javascript" src="./js/d3.js"></script>
+
+      <!--Angular.js and related-->
+      <script type="text/javascript" src="./js/angular.js"></script>
+      <script type="text/javascript" src="./js/angular-route.js"></script>
+      <script type="text/javascript" src="./js/angular-cookies.js"></script>
+
+      <!-- Modules -->
+      <script type="text/javascript" src="./modules/app.js"></script>
+
+      <!--Routers-->
+  	  <script type="text/javascript" src="./routers/navRouter.js"></script>
+
+  	  <!-- Controllers -->
+  	  <script type="text/javascript" src="./controllers/mainController.js"></script>
+      <script type="text/javascript" src="./controllers/homeController.js"></script>
+      <script type="text/javascript" src="./controllers/issueController.js"></script>
+      <script type="text/javascript" src="./controllers/postsController.js"></script>
+
+      <script type="text/javascript" src="./js/site.js"></script>
+    </body>
+  </html>
